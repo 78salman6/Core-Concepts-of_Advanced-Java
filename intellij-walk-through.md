@@ -1,4 +1,4 @@
-# Keys to ease pain in Intellij:
+## Keys to ease pain in Intellij:
 
 1. Enter **Shift key 2 times** to search everywhere
 2. **Alt + 1** to **show directory structure** of project
@@ -13,7 +13,7 @@
 11. Alt + 2 ( Opens favorite window ) -> You will find all your bookmarks here
 12. For making any window to floating window -> Setting -> View Mode -> Float
 
-# Keyboard short cut for speeding up coding
+## Keyboard short cut for speeding up coding
 
 1. To delete a line - Ctrl + y on that line
 2. Alt + Shift + Down arrow to place code at bottom
@@ -22,16 +22,16 @@
 
 > Reference - https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf
 
-# Create new Java classes and interface:
+## Create new Java classes and interface:
 
 Structure of template can be modified. To change template -> Settings -> Editor -> File and Code Templates
 For implementing an interface from a class hover over the error then click on implement method ( Or Alt + Enter )- V.V.I
 
-# Live templates:
+## Live templates:
 
 Intellij IDEA has a feature named Live Templates that lets you associate and abbreviate with a block of code. When you type in the abbreviation and press tab or enter or return, that abbreviation expands to the complete block.
 
-## Some standard live templates that are already defined in Intellij IDEA:
+### Some standard live templates that are already defined in Intellij IDEA:
 
     1. sout -> System.out.println("");
     2. souf -> System.out.printf("");
@@ -41,13 +41,13 @@ Intellij IDEA has a feature named Live Templates that lets you associate and abb
     6. fori -> for (int i = 0; i < ; i++) { }
     7. foreach
 
-## For creating your own Live templates
+### For creating your own Live templates
 
 Settings -> Live Editor
 
 **Reformat code** -> Unindent code ( in which whitespace can be in any form ) -> Select code block which you want to reformat -> Code -> Reformat Code
 
-## Configuring custom Reformat code
+### Configuring custom Reformat code
 
 File -> Settings -> Editor
 **Change style of comment in Intellij**
@@ -55,14 +55,14 @@ File -> Settings -> Editor -> Code Generation tab -> Uncheck "Line comment at fi
 
 **Deletes all unused import statements** ----> Code -> Optimize Imports
 
-# Navigate code and find Files:
+## Navigate code and find Files:
 
 See the home page when you opens a project
 For search in all -> Double shift
 For search for file -> CTRL + SHIFT + N
 Search Class -> CTRL + n
 
-# Search throughout your entire project
+## Search throughout your entire project
 
 **For finding out all places where particular method or classes are being used** with a tool called Find Usages -> Put cursor on the method then press -> ALT + F7
 
@@ -77,13 +77,13 @@ Refactor -> Extract/Introduce -> Method
 Refactor -> Extract/Introduce -> Constant
 **Extract local variable field**
 
-## Breakpoints:
+### Breakpoints:
 
 1. CTRL + F8 on line on which you want to put breakpoints
 2. Evaluate Expression by clicking right on variable ( Powerful tool )
 3. You Can add any valid variable operation in debug window by clicking + icon
 4. You can select a variable and then right click and then Add to watches
 
-# JavaDoc:
+## JavaDoc:
 
 JovaDoc is a tool which is included with JDK. It knows how to parse your source code and extract specially formatted comments and then use them to build HTML based documentation. Before generating your application's documentation, you can add Javadoc comments before class and interface and other type declarations before field declarations and before methods.
