@@ -170,3 +170,78 @@ Collections.unmodifyableMap
 Collections.unModifyableList
 
 `return Collections.unmodifyableMap(this.record)`
+
+Method 3 ( Removing Escaping Reference using Interface ):
+CustomerReadOnly Interface
+
+```
+public interface CustomerReadOnly {
+    String getName();
+}
+```
+
+Customer Class
+
+```
+public class Customer implements CustomerReadOnly {
+    private String name;
+
+    public Customer(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+```
+
+CustomerRecord Class
+
+```
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
+public class CustomerRecord {
+
+    private Map<String, Customer> records;
+    public CustomerRecord() {
+        this.records = new HashMap<String, Customer>();
+    }
+    public void addCustomer(Customer c) {
+        this.records.put(c.getName(), c);
+    }
+    // removing escaping reference
+    public Map<String, Customer> getCustomers() {
+        return Collections.unmodifiableMap(this.records);
+    }
+    // removing escaping reference
+    public CustomerReadOnly getCustomerByName(String name) {
+        return this.records.get(name);
+    }
+}
+```
+
+Main class
+
+```
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+public class Memory {
+    public static void main(String[] args) {
+        CustomerRecord r = new CustomerRecord();
+        Map<String, Customer> myCustomer = r.getCustomers();
+        // uncomment below line to see this will be a compile time error now
+//        Customer c = r.getCustomerByName("Salman");
+        CustomerReadOnly c = r.getCustomerByName("Salman");
+    }
+}
+```
