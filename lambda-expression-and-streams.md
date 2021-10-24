@@ -1,16 +1,18 @@
 ### What you should know ?
+
 - Lambda expressions were introduced with Java 8.
 - They can be used to replace **anonymous inner classes**
 - With java 8 we have functional interfaces
-- 2 packages are supported in Java for functional Interface
-	1. java.util.function
-	2. java.util.stream
-> Note: **Lambda expressions** ( introduced in Java 8 ) use both of this new packages
+- 2 packages are supported in Java for functional Interface 1. java.util.function 2. java.util.stream
+  > Note: **Lambda expressions** ( introduced in Java 8 ) use both of this new packages
 
 ### Functional Interface:
+
 - An interface that contains at most one **abstract function**
 - Represents abstract concepts such as functions, actions, or predicates
+
 ### Types of Functional Interface
+
 **Predicate** - It takes one argument, return a boolean. It will have test method.
 
 **Consumer** - It accepts single argument with no return value.
@@ -24,6 +26,7 @@
 **BinaryOperator** - Operation on 2 argumennts and returns a single output. Ex - Summation, multiplication, division etc.
 
 #### Working example:
+
 ```
 package com.morgam.round3;
 
@@ -62,13 +65,15 @@ public class PredefinedFunctionalInterface {
 ```
 
 ### Collection API:
+
 - Collection API was introduced with Java 7.
 - A collection is a group of elements
 - They can store, retrieve, manipulate, and communicate aggregate data.
 
 #### java.util.stream:
+
 - This package contains interfaces for using streams.
-- A stream represents a sequence of elements.      
+- A stream represents a sequence of elements.
 - The stream package was added to traverse collections.
 - Most stream operations take a lambda expression.
 - Stream operations are either intermediate or terminal.
@@ -81,6 +86,7 @@ public class PredefinedFunctionalInterface {
 - Elements of a stream can not be changed. - You can save them to a new collection.
 
 ### Example of Stream Operation
+
 ```
 package lambdas_02_02;
 import java.util.Arrays;
@@ -95,7 +101,7 @@ import java.util.stream.Stream;
 
 public class Lambdas_02_02 {
     public static void main(String[] args) {
-        // First of all converting array to list then converting list to stream then sorting the // list view then printing the 1st element of the sorted stream. Note that the original 
+        // First of all converting array to list then converting list to stream then sorting the // list view then printing the 1st element of the sorted stream. Note that the original
         // list will be as it is
         Arrays.asList("red", "green", "blue")
         .stream()
@@ -103,7 +109,7 @@ public class Lambdas_02_02 {
         .findFirst()
         .ifPresent(System.out::println);
 
-        //example of Stream.of with a filter 
+        //example of Stream.of with a filter
         // Uncomment Sysout to see how flow goes while doing stream operation
         Stream.of("apple", "pear", "banana", "cherry", "apricot")
                 .filter(fruit -> {
@@ -124,7 +130,9 @@ public class Lambdas_02_02 {
 ```
 
 ### Example of Stream with Collections and Class
+
 ##### Book Class
+
 ```
 package lambdas_02_01;
 
@@ -133,14 +141,14 @@ public class Book {
     private String authorFName;
     private String authorLName;
     private int pages;
-  
-    public Book(String title, String authorFName, String authorLName, 
+
+    public Book(String title, String authorFName, String authorLName,
             int pages) {
         this.title = title;
         this.authorFName = authorFName;
         this.authorLName = authorLName;
         this.pages = pages;
-     
+
     }
 
     public String getTitle() {
@@ -180,7 +188,9 @@ public class Book {
     }
 }
 ```
+
 ##### Lambdas_With_Collection_And_Class class
+
 ```
 package lambdas_02_01;
 
@@ -211,11 +221,11 @@ public class Lambdas_With_Collection_And_Class {
         });
         //now remove the return statement
         Collections.sort(names, (String a, String b) -> b.compareTo(a));
-        
+
         //now remove the data types and allow the compile to infer the type
         Collections.sort(names, (a, b) -> b.compareTo(a));
 
-   
+
         //total pages in your book collection
         Book book1 = new Book("Miss Peregrine's Home for Peculiar Children",
                 "Ranson", "Riggs", 382);
@@ -223,17 +233,17 @@ public class Lambdas_With_Collection_And_Class {
                 "JK", "Rowling", 411);
         Book book3 = new Book("The Cat in the Hat",
                 "Dr", "Seuss", 45);
-        
+
         List<Book> books = Arrays.asList(book1, book2, book3);
         int total = books.stream()
                 .collect(Collectors.summingInt(Book::getPages));
         System.out.println(total);
-        
+
         //create a list with duplicates
         List<Book> dupBooks = Arrays.asList(book1, book2, book3, book1, book2);
         System.out.println("Before removing duplicates: ");
         System.out.println(dupBooks.toString());
-        
+
         Collection<Book> noDups = new HashSet<>(dupBooks);
         System.out.println("After removing duplicates: ");
         System.out.println(noDups.toString());
@@ -244,14 +254,16 @@ public class Lambdas_With_Collection_And_Class {
                 .map(Book::getAuthorLName)
                 .collect(Collectors.toList());
         System.out.println(list);
-        
+
         //example of using Set to eliminate dups and sort automatically
         Set<Integer> numbers = new HashSet<>(asList(4, 3, 3, 3, 2, 1, 1, 1));
         System.out.println(numbers.toString());
     }
 }
 ```
+
 ### Example of Lambda Expression with numbers
+
 ```
 package lambdas_02_03;
 
@@ -282,9 +294,8 @@ public class Lambdas_For_Nums {
 ```
 
 ### Custom Functional Interface Example
-```
-package com.morgan.interview.round2;
 
+```
 public class CustomFunctionalInterface {
 
     @FunctionalInterface
