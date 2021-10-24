@@ -20,6 +20,6 @@ Java virtual machine is incredibly complicated and as Java developer we don’t 
    > Note: In Java all objects are stored on the heap.
 
 Example:
-![plot](./images/memory-management/1.png)
+![plot](./images/memory-management/1.PNG)
 Variables are a reference to the object ( stored on stack )
 Local variables are stored on the stack ( Primitive variables are entirely local ).
