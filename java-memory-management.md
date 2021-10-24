@@ -162,7 +162,9 @@ public class Memory {
 ```
 
 **Solution of Escaping reference ( taking reference as above exaple )**:
+
 Method 1 ( Good solution ) -> Return new copy of object in place of original object.
+
 Method 2 ( Elegant Solution ) -> Return immutable collection. Java allows us to return immutable collection.
 Collections.unmodifyableMap
 Collections.unModifyableList
